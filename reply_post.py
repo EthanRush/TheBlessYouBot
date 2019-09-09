@@ -1,3 +1,5 @@
+#Special thanks to Shantnu "shantnu" Tiwari for his tutorial series "Build a Reddit Bot" on pythonforengineers.com
+
 #!/usr/bin/python
 import praw
 import pdb
