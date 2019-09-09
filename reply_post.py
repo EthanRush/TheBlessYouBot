@@ -24,16 +24,16 @@ def idTracker():
 
 
 
-# Get the top 5 values from our subreddit
-subreddit = reddit.subreddit('AceOfLosers')
+# Select your desired subreddit
+subreddit = reddit.subreddit('SUBREDDIT')
 def main(posts_replied_to):
     for submission in subreddit.hot(limit=10):
      # If we haven't replied to this post before
         if submission.id not in posts_replied_to:
-            # Do a case insensitive search
+            # Search for cases representing a sneeze 
             if re.search("sneeze", submission.title, re.IGNORECASE) or re.search("achoo", submission.title, re.IGNORECASE):
-                # Reply to the post
-                response = "Bless you u/" + str(submission.author)
+                # Reply to the post 
+                response = "Bless you u/" + str(submission.author) + "/n
                 submission.reply(response)
                 print("Bot replying to : ", submission.id)
 
@@ -42,7 +42,7 @@ def main(posts_replied_to):
                 # Write our updated list back to the file
                 with open("posts_replied_to.txt", "a") as f:
                     f.write(submission.id + "\n")
-
+#Steps are the same for this but focusing on comments in the subreddit rather than post titles
     for comment in subreddit.comments(limit=500):
         if comment.id not in posts_replied_to:
             if re.search("sneeze", comment.body, re.IGNORECASE) or re.search("achoo", comment.body, re.IGNORECASE):
